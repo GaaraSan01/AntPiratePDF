@@ -11,5 +11,5 @@ pip==23.0.1
 PyPDF2==3.0.1
 reportlab==4.0.4
 setuptools==66.1.1
-Werkzeug==2.3.6
-WTForms==3.0.1
+Werkzeug<=2.3.6
+WTForms<=3.0.1
