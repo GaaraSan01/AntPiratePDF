@@ -27,7 +27,7 @@ def modify_pdy(filename, cpf, position, color, upload_folder):
     print(f'Desenho do CPF na posição: {x}, {y}')
 
     can.setFillColor(color)
-    can.setFont('Montserrat', 10)
+    can.setFont('Helvetica', 10)
     can.drawString(x, y, cpf)
     can.save()
 
@@ -42,16 +42,17 @@ def modify_pdy(filename, cpf, position, color, upload_folder):
         existing_pdf = PdfReader(open(os.path.join(upload_folder, filename), 'rb'))
         print('Sucesso ao abrir o PDF')
         output = PdfWriter()
-        print(f'Número de paginas no PDF é: {len(existing_pdf.pages)}')
-        
-        for i in renge(len(existing_pdf.pages)):
-            page = existing_pdf.page[i]
+        print(f'Número de páginas no PDF é: {len(existing_pdf.pages)}')
+
+        for i in range(len(existing_pdf.pages)):
+            page = existing_pdf.pages[i]
             page.merge_page(new_pdf.pages[0])
-            output.add_page(paged)
+            output.add_page(page)
 
         with open(os.path.join(upload_folder, filename), 'wb') as outputStream:
             output.write(outputStream)
 
         print(f'PDF modificado: {os.path.join(upload_folder, filename)}')
+
     except Exception as e:
         print('Erro em abrir o PDF gerado', str(e))

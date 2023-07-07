@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --primary-color: #0c0722;
+    --secundary-color: #42386E;
+    --terciary-color: #4227BA;
+}
+
+html, body {
+    background: var(--primary-color);
+    color: white;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+form {
+    padding: 20px 15px 20px 15px;
+    width: 600px;
+    min-width: 300px;
+    max-width: 600px;
+    background-color: var(--secundary-color);
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 20px 0;
+}
+
+input[type='text']{
+    padding: 10px;
+    border: none;
+    background-color: #f1f1f1;
+}:focus{
+    outline: none;
+}
+
+select {
+    padding: 10px;
+    font-weight: 600;
+    text-transform: capitalize;
+}:focus{
+    outline: none;
+}
+
+input[type='color']{
+    width: 30%;
+    height: 30px;
+}
+
+
+
+label[for="file"] {
+    background-color: var(--terciary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+  
+label[for="file"]:hover {
+    /* Estilos para o botão quando o cursor passa por cima */
+    background-color: var(--primary-color);
+}
+  
+label[for="file"]:active {
+    /* Estilos para o botão quando está pressionado */
+    background-color: var(--terciary-color);
+}
+
+button {
+    padding: 10px 0 10px 0;
+    border: solid 1.2px transparent;
+    font: normal bold 20px white;
+    color: white;
+    background-color: var(--primary-color);
+    transition: all .2s ease-in;
+}
+button:hover{
+    background-color: transparent;
+    border: solid 1.2px white;
+}
